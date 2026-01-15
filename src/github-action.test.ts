@@ -94,10 +94,8 @@ describe("GitHub Action", () => {
       expect(actionYaml.inputs["config-repo"].default).toBe("drift-config");
     });
 
-    it("should have optional slack-webhook input", () => {
-      expect(actionYaml.inputs["slack-webhook"]).toBeDefined();
-      expect(actionYaml.inputs["slack-webhook"].required).toBe(false);
-    });
+    // Note: slack-webhook input was removed in v0.2.0
+    // Slack alerts are now handled via CLI only, not the GitHub Action
 
     it("should have optional json input with default false", () => {
       expect(actionYaml.inputs.json).toBeDefined();
