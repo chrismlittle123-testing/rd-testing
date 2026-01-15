@@ -1,0 +1,23 @@
+{
+  "name": "rd-testing",
+  "version": "1.0.0",
+  "description": "Test suite for repo-drift CLI tool",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:scans": "vitest run --grep 'Scans'",
+    "test:integrity": "vitest run --grep 'Integrity'",
+    "test:discovery": "vitest run --grep 'Discovery'",
+    "test:org": "vitest run --grep 'Organization'",
+    "test:exclude": "vitest run --grep 'Exclude'"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
