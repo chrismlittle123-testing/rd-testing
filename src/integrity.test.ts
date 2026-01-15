@@ -65,7 +65,7 @@ describe("Integrity Checks", () => {
     });
 
     it("should report missing for release.yml when it does not exist", () => {
-      const results = runOrgScanJson("rd-ts-clean");
+      const results = runOrgScanJson("rd-py-clean");
       const integrity = results.repos[0].results.integrity.find(
         (i) => i.file === ".github/workflows/release.yml"
       );
@@ -103,8 +103,8 @@ describe("Integrity Checks", () => {
     });
 
     it("should count integrity missing correctly", () => {
-      const results = runOrgScanJson("rd-ts-clean");
-      // release.yml is missing
+      const results = runOrgScanJson("rd-py-clean");
+      // rd-py-clean is missing ci.yml and release.yml
       expect(results.repos[0].results.summary.integrityMissing).toBeGreaterThan(0);
     });
   });
